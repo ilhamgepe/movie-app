@@ -17,11 +17,20 @@ a:hover {
 .color-gray {
     color: #666666;
 }
+.color-grey {
+    color: #808080;
+}
 .relative {
     position: relative;
 }
 .absolute {
     position: absolute;
+}
+ul {
+    list-style: none;
+}
+ol {
+    list-style: none;
 }
 
 /* ******************my css****************** */
@@ -72,3 +81,26 @@ input[type="search"]:focus {
 }
 
 /* ******************details movie****************** */
+.certification {
+    display: inline-flex;
+    /* white-space: nowrap; */
+    align-items: center;
+    align-content: center;
+    padding: 0.06em 4px 0.15em 4px !important;
+    border: 1px solid rgba(0,0,0,0.6);
+    color: rgba(0,0,0,0.6);
+    line-height: 1;
+    border-radius: 2px;
+    margin-right: 7px;
+}
+.bg-detail-movie{
+    background: rgb(107,144,173);
+    background: -moz-linear-gradient(302deg, rgba(107,144,173,1) 20%, rgba(105,105,111,1) 42%, rgba(101,124,126,1) 100%);
+    background: -webkit-linear-gradient(302deg, rgba(107,144,173,1) 20%, rgba(105,105,111,1) 42%, rgba(101,124,126,1) 100%);
+    background: linear-gradient(302deg, rgba(107,144,173,1) 20%, rgba(105,105,111,1) 42%, rgba(101,124,126,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6b90ad",endColorstr="#657c7e",GradientType=1);
+}
+.fact span.titik::before {
+    content: '\2022';
+    margin-right: 5px;
+}
