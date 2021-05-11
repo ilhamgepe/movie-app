@@ -1,0 +1,74 @@
+/* ******************basic css****************** */
+a {
+    color: inherit !important;
+}
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(47, 196, 67) !important;
+}
+.color-white {
+    color: #fff;
+}
+.color-black {
+    color: #000;
+}
+.color-gray {
+    color: #666666;
+}
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+
+/* ******************my css****************** */
+/* ******************navbar css****************** */
+nav {
+    background-color: #032541;
+}
+nav input[type="search"] {
+    border-radius: 15px;
+    text-indent: 10px;
+}
+.fa-search-nav {
+    margin-top: 9px;
+}
+
+/* ******************content****************** */
+.hero {
+    background-repeat: no-repeat;
+    background-position-y: 53%;
+    background-position-x: 45%;
+    color: #fff;
+    min-height: 400px;
+}
+.card {
+    overflow: hidden;
+}
+.kartu {
+    border-radius: 5px;
+    width: 250px;
+    box-sizing: border-box;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(212, 212, 212, 1);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(212, 212, 212, 1);
+    box-shadow: 0px 0px 10px 1px rgba(212, 212, 212, 1);
+}
+.kartu img,
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.fa-star {
+    color: rgb(231, 228, 6);
+}
+input[type="search"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px pink;
+}
+
+/* ******************details movie****************** */
