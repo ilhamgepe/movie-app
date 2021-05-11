@@ -14,8 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::view('/farah', 'farah');
-
-
 Route::get('/', [moviesController::class, 'index'])->name('movie.index');
 Route::get('/movie/{movie}', [ moviesController::class, 'show'])->name('movie.show');
