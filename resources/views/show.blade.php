@@ -11,14 +11,7 @@
                 </div>
                 <div class="mt-5">
                     <h1 class=""><a href="#">Mortal Kombat</a><span class="color-gray"> (2011)</span></h1>
-                    <ul class="">
-                        <li class="d-flex">
-                            <p>Action, Fantasy, Adventure, Science Fiction </p>
-                        </li>
-                        <li class="">
-                            <p>1h 50m</p>
-                        </li>
-                    </ul>
+                    
                 </div>
                </div>
            </div>
