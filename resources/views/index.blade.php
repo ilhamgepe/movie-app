@@ -14,7 +14,7 @@
 
             @foreach ($popularMovies as $movie)
                 <x-movie-card :movie="$movie" :genres="$genres" />
-                @endforeach
+            @endforeach
                 
             </div>
             <div class="row now-playing d-flex justify-content-center">

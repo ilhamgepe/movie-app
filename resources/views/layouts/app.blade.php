@@ -26,7 +26,7 @@
         </div>
         <form class="d-flex">
             <input class="me-2 search-nav" type="search" placeholder="Search" aria-label="Search">
-            <a href="#">
+            <a href="">
                 <i  class="fa fa-search fa-search-nav color-white"></i>
             </a>
           </form>
@@ -37,7 +37,8 @@
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="{{asset('bs5/js/bootstrap.bundle.js')}}"></script>
-    @stack('js')
+  <script src="{{asset('bs5/js/bootstrap.bundle.js')}}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  @stack('js')
 </body>
 </html>

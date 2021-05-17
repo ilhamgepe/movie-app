@@ -94,11 +94,8 @@ input[type="search"]:focus {
     margin-right: 7px;
 }
 .bg-detail-movie{
-    background: rgb(107,144,173);
-    background: -moz-linear-gradient(302deg, rgba(107,144,173,1) 20%, rgba(105,105,111,1) 42%, rgba(101,124,126,1) 100%);
-    background: -webkit-linear-gradient(302deg, rgba(107,144,173,1) 20%, rgba(105,105,111,1) 42%, rgba(101,124,126,1) 100%);
-    background: linear-gradient(302deg, rgba(107,144,173,1) 20%, rgba(105,105,111,1) 42%, rgba(101,124,126,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6b90ad",endColorstr="#657c7e",GradientType=1);
+    background: rgb(10,70,87);
+    background: linear-gradient(90deg, rgba(10,70,87,0.9308765742625175) 0%, rgba(40,175,185,0.9140698515734419) 53%, rgba(51,154,175,0.9196720924698004) 100%);
 }
 .fact span.titik::before {
     content: '\2022';

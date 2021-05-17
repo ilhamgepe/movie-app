@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Http;
 
 class moviesController extends Controller
 {
+
+    private const TOKEN_APP = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNzNhOGMzM2VkNTU2Zjc5YThkZmMxYjc3MDRlMDZkOCIsInN1YiI6IjYwOGEyMzUzMmRjNDRlMDA2ZmU5NzFmYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EeQzQBii0FIXduWKA-o7-eITeSQV3drv5eBHdUJcLJE';   
     /**
      * Display a listing of the resource.
      *
@@ -14,26 +16,21 @@ class moviesController extends Controller
      */
     public function index()
     {
-        $token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNzNhOGMzM2VkNTU2Zjc5YThkZmMxYjc3MDRlMDZkOCIsInN1YiI6IjYwOGEyMzUzMmRjNDRlMDA2ZmU5NzFmYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EeQzQBii0FIXduWKA-o7-eITeSQV3drv5eBHdUJcLJE';
 
         $popularMovies = Http::withHeaders([
-            'Authorization' => 'Bearer '.$token,
+            'Authorization' => 'Bearer '.self::TOKEN_APP,
             ])
             ->get('https://api.themoviedb.org/3/movie/popular')->json()['results'];
 
-        // $actors = Http::withHeaders([
-        //     'Authorization' => 'Bearer '.$token,
-        //     ])
-        //     ->get('https://api.themoviedb.org/3/person/{"id"}')->json()['results'];
 
         $nowPlayingMovies = Http::withHeaders([
-            'Authorization' => 'Bearer '.$token,
+            'Authorization' => 'Bearer '.self::TOKEN_APP,
             ])
             ->get('https://api.themoviedb.org/3/movie/now_playing')->json()['results'];
 
 
         $genresArray = Http::withHeaders([
-            'Authorization' => 'Bearer '.$token,
+            'Authorization' => 'Bearer '.self::TOKEN_APP,
             ])
             ->get('https://api.themoviedb.org/3/genre/movie/list')->json()['genres'];
 
@@ -79,7 +76,13 @@ class moviesController extends Controller
      */
     public function show($id)
     {
-        return view ('show');
+        $movie = Http::withHeaders([
+            'Authorization' => 'Bearer '.self::TOKEN_APP,
+            ])
+            ->get('https://api.themoviedb.org/3/movie/'.$id)->json();
+        return view ('show',[
+            'movie' => $movie,
+        ]);
     }
 
     /**
@@ -90,7 +93,7 @@ class moviesController extends Controller
      */
     public function edit($id)
     {
-        //
+        // self::TOKEN_APP
     }
 
     /**
