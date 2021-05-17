@@ -78,6 +78,14 @@
     </div>
 </div>
 <div class="container-fluid">
-    <p>test</p>
+    
+    <div class="">
+        <canvas class="myChart">
+            
+        </canvas>
+    </div>
 </div>
 @endsection
+@push('js')
+    <script></script>
+@endpush
