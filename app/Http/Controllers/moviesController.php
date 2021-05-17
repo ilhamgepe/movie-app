@@ -80,8 +80,20 @@ class moviesController extends Controller
             'Authorization' => 'Bearer '.self::TOKEN_APP,
             ])
             ->get('https://api.themoviedb.org/3/movie/'.$id)->json();
+        $credit = Http::withHeaders([
+            'Authorization' => 'Bearer '.self::TOKEN_APP,
+            ])
+            ->get('https://api.themoviedb.org/3/movie/'.$id.'/credits')->json();
+                
+        $jam = substr($movie['runtime'] / 60, 0, 1);
+        $menit = $movie['runtime'] % 60;
+       
+            dump($credit);
         return view ('show',[
             'movie' => $movie,
+            'credit' => $credit,
+            'jam' => $jam,
+            'menit' => $menit,
         ]);
     }
 

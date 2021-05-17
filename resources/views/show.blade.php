@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-@dump($movie)
+{{-- @dump($movie) --}}
 <div class="container-fluid bg-detail-movie">
     <div class="container color-white py-5">
        <div class="row gy-4">
@@ -19,32 +19,65 @@
                     <span class="certification">TV-MA</span>
                     @foreach ($movie['genres'] as $genre)
                         <span>{{$genre['name']}}@if(!$loop->last), @endif</span>
-                    @endforeach
-                    <span class="titik">1h 50m</span>
+                        @endforeach
+                        <span class="titik">
+                            @if ($jam < 1)
+                            {{$menit."m"}}
+                            @else
+                            {{$jam.'h'." ".$menit."m"}}
+                            @endif
+                        </span>
                 </div>
                 <div class="mt-4">
-                    <h4 class="fw-light fst-italic">Winter Is Coming</h4>
-                    <h4 class="fst-normal mt-2">Kilasan Singkat</h4>
-                    <p>Tujuh keluarga bangsawan berjuang untuk menguasai tanah mitos Westeros. Gesekan antara rumah-rumah mengarah ke perang skala penuh. Semua sementara kejahatan yang sangat kuno terbangun di utara terjauh. Di tengah-tengah perang, perintah militer yang diabaikan, Night's Watch, adalah yang berdiri di antara alam manusia dan kengerian es di luarnya.</p>
+                    <h4 class="fw-light fst-italic"></h4>
+                    <h4 class="fw-bolder mt-2">Kilasan Singkat</h4>
+                    <p class="fw-500">{{$movie['overview']}}</p>
                 </div>
-                <ol class="p-0">
-                    <div class="row">
-                        <div class="col-5">
-                            <li>
-                                <p class="mb-0 fw-bold"><a href="#">David Benioff</a></p>
-                                <p class="fw-light">Kreator</p>
-                            </li>
+               <div class="row mt-lg-3 mt-md-3">
+                   @foreach ($credit['crew'] as $credit) 
+                   @if ($credit['job'] == 'Screenplay')
+                        <div class="col-4">
+                            <a href="#"><p class="mb-0">{{$credit['original_name']}}</p></a>
+                            <p>{{$credit['job']}}</p>
                         </div>
-                        <div class="col-5">
-                            <li>
-                                <p class="mb-0 fw-bold"><a href="#">D. B. Weiss</a></p>
-                                <p class="fw-light">Kreator</p>
-                            </li>
-                        </div>
-                    </div>
-                </ol>
+                        @elseif($credit['job'] == 'Director')
+                            <div class="col-4">
+                                <a href="#"><p class="mb-0">{{$credit['original_name']}}</p></a>
+                                <p>{{$credit['job']}}</p>
+                            </div>
+                        @elseif($credit['job'] == 'Writer')
+                            <div class="col-4">
+                                <a href="#"><p class="mb-0">{{$credit['original_name']}}</p></a>
+                                <p>{{$credit['job']}}</p>
+                            </div>
+                        @elseif($credit['job'] == 'Novel')
+                            <div class="col-4">
+                                <a href="#"><p class="mb-0">{{$credit['original_name']}}</p></a>
+                                <p>{{$credit['job']}}</p>
+                            </div>
+                            @elseif($credit['job'] == 'Story')
+                            <div class="col-4">
+                                <a href="#"><p class="mb-0">{{$credit['original_name']}}</p></a>
+                                <p>{{$credit['job']}}</p>
+                            </div>
+                        @elseif($credit['job'] == 'Story')
+                            <div class="col-4">
+                                <a href="#"><p class="mb-0">{{$credit['original_name']}}</p></a>
+                                <p>{{$credit['job']}}</p>
+                            </div>
+                        @elseif($credit['job'] == 'Story')
+                            <div class="col-4">
+                                <a href="#"><p class="mb-0">{{$credit['original_name']}}</p></a>
+                                <p>{{$credit['job']}}</p>
+                            </div>
+                   @endif 
+                    @endforeach
+               </div>
             </div>
         </div>
     </div>
+</div>
+<div class="container-fluid">
+    <p>test</p>
 </div>
 @endsection
